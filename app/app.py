@@ -10,7 +10,27 @@ import plotly.graph_objects as go
 model = joblib.load('artifacts/svm_pipeline.pkl') 
 st.set_page_config('Exam Score Prediction', '📚', 'wide')
 
-st.markdown('<h1 style="font-size:50px;color:orange;font-family:times new roman;">Exam Score Prediction using ML</h1>', unsafe_allow_html=True)
+#st.markdown('<h1 style="font-size:50px;color:orange;font-family:times new roman;">Exam Score Prediction using ML</h1>', unsafe_allow_html=True)
+st.markdown("""
+    <style>
+        /* Standardgrösse für Desktop */
+        .main-title {
+            font-size: 50px;
+            color: orange;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+        }
+
+        /* Anpassung für Mobile (Bildschirmbreite unter 768px) */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 24px !important; /* 12px ist extrem klein, 24px ist lesbar */
+            }
+        }
+    </style>
+    <h1 class="main-title">Exam Score Prediction using ML</h1>
+    """, unsafe_allow_html=True)
+
 
 df = pd.read_csv('data/feature eng data/feature_eng_data.csv')
 
